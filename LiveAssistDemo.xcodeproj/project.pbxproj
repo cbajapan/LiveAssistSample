@@ -14,7 +14,6 @@
 		09CFBE802B01E8E800EDCA7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09CFBE7F2B01E8E800EDCA7C /* Assets.xcassets */; };
 		09CFBE832B01E8E800EDCA7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09CFBE812B01E8E800EDCA7C /* LaunchScreen.storyboard */; };
 		09CFBE862B01E8E800EDCA7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CFBE852B01E8E800EDCA7C /* main.m */; };
-		09CFBE8E2B01EA9D00EDCA7C /* LASDK in Frameworks */ = {isa = PBXBuildFile; productRef = 09CFBE8D2B01EA9D00EDCA7C /* LASDK */; };
 		09CFBEA52B01EB7800EDCA7C /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CFBE8F2B01EB7800EDCA7C /* WebViewController.m */; };
 		09CFBEA62B01EB7800EDCA7C /* ShortCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CFBE932B01EB7800EDCA7C /* ShortCode.m */; };
 		09CFBEA72B01EB7800EDCA7C /* DynamicMasker.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CFBE942B01EB7800EDCA7C /* DynamicMasker.m */; };
@@ -73,7 +72,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09CFBE8E2B01EA9D00EDCA7C /* LASDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +83,7 @@
 			children = (
 				09CFBE722B01E8E700EDCA7C /* LiveAssistDemo */,
 				09CFBE712B01E8E700EDCA7C /* Products */,
+				3F1335BF76044032FA48B02A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,6 +137,13 @@
 			path = LiveAssistDemo;
 			sourceTree = "<group>";
 		};
+		3F1335BF76044032FA48B02A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,9 +160,6 @@
 			dependencies = (
 			);
 			name = LiveAssistDemo;
-			packageProductDependencies = (
-				09CFBE8D2B01EA9D00EDCA7C /* LASDK */,
-			);
 			productName = LiveAssistDemo;
 			productReference = 09CFBE702B01E8E700EDCA7C /* LiveAssistDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -184,9 +187,6 @@
 				Base,
 			);
 			mainGroup = 09CFBE672B01E8E700EDCA7C;
-			packageReferences = (
-				09CFBE8C2B01EA9D00EDCA7C /* XCRemoteSwiftPackageReference "fusion-live-assist-sdk" */,
-			);
 			productRefGroup = 09CFBE712B01E8E700EDCA7C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -376,12 +376,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveAssistDemo/Info.plist;
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(MARKETING_VERSION)";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = 1.0;
 				INFOPLIST_KEY_NSCameraUsageDescription = Videos;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = Voice;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = Photos;
@@ -397,6 +398,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -407,12 +409,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveAssistDemo/Info.plist;
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(MARKETING_VERSION)";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = 1.0;
 				INFOPLIST_KEY_NSCameraUsageDescription = Videos;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = Voice;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = Photos;
@@ -428,6 +431,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -455,25 +459,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		09CFBE8C2B01EA9D00EDCA7C /* XCRemoteSwiftPackageReference "fusion-live-assist-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/cbajapan/fusion-live-assist-sdk.git";
-			requirement = {
-				kind = exactVersion;
-				version = "1.64.13-beta1";
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		09CFBE8D2B01EA9D00EDCA7C /* LASDK */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 09CFBE8C2B01EA9D00EDCA7C /* XCRemoteSwiftPackageReference "fusion-live-assist-sdk" */;
-			productName = LASDK;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 09CFBE682B01E8E700EDCA7C /* Project object */;
 }
